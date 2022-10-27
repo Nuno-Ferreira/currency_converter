@@ -29,14 +29,18 @@ def build(app):
     c2_input = toga.TextInput()
     #I need to create 3 inputs for the currencies and the amount
     m_input = toga.TextInput()
-    mc_box = toga.TextInput(readonly=True)
+    mc_input = toga.TextInput(readonly=True)
 
     c1_label = toga.Label('GBP', style=Pack(text_align=LEFT))
     c2_label = toga.Label('EUR', style=Pack(text_align=LEFT))
     join_label = toga.Label('converts to', style=Pack(text_align=RIGHT))
 
     def convert(widget): #make this connnect to the currencyconverter script
-        c1_input
+        c1_input.value = currency_to_convert_from
+        c2_input.value = currency_to_convert_to
+        m_input.value = amount_to_convert
+        if c1_input.value == int():
+            return #maybe add a pop up error message saying it cant take any integers values
 
 
     button = toga.Button('Convert', on_press=convert)
