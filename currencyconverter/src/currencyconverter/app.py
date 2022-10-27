@@ -6,15 +6,6 @@ import toga
 from toga.style.pack import COLUMN, ROW, LEFT, RIGHT, Pack
 from currency_converter import currency_to_convert_to, currency_to_convert_from, amount_to_convert
 
-#import android
-#from android.util import Log
-#from android.widget import LinearLayout
-#from android.widget import Button
-#from android.widget import TextView
-#from android.view import Gravity
-#import android.view
-
-
 
 #lets start again but with toga
 
@@ -34,6 +25,9 @@ def build(app):
     c1_label = toga.Label('GBP', style=Pack(text_align=LEFT))
     c2_label = toga.Label('EUR', style=Pack(text_align=LEFT))
     join_label = toga.Label('converts to', style=Pack(text_align=RIGHT))
+    m_label = toga.Label('amount to convert', style=Pack(text_align=RIGHT))
+    mc_label = toga.Label('converted amount:', style=Pack(text_align=RIGHT))
+
 
     def convert(widget): #make this connnect to the currencyconverter script
         c1_input.value = currency_to_convert_from
@@ -54,10 +48,10 @@ def build(app):
     c1_box.add(c1_label)
 
     m_box.add(m_input)
-    m_box.add()
+    m_box.add(m_label)
 
     mc_box.add(mc_input)
-    mc_box.add()
+    mc_box.add(mc_label)
 
     box.add(c2_box)
     box.add(c1_box)
@@ -83,8 +77,9 @@ def build(app):
     #labels styling
     c1_label.style.update(width=100, padding_left=10)
     c2_label.style.update(width=100, padding_left=10)
+    m_label.style.update(width=100, padding_left=10)
+    mc_label.style.update(width=100, padding_left=10)
     join_label.style.update(width=150, padding_right=10)
-
 
     #button styling
     button.style.update(padding=15, flex=1)
@@ -96,6 +91,16 @@ def build(app):
 
 #def main():
  #   return CurrencyConverter()
+
+
+
+#import android
+#from android.util import Log
+#from android.widget import LinearLayout
+#from android.widget import Button
+#from android.widget import TextView
+#from android.view import Gravity
+#import android.view
 
 
 #this was a mistake // this is if I was trying ot build with VOC (another transpiler)
