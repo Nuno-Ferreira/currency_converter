@@ -53,25 +53,49 @@ def build(app):
     c1_box.add(c1_input)
     c1_box.add(c1_label)
 
+    m_box.add(m_input)
+    m_box.add()
+
+    mc_box.add(mc_input)
+    mc_box.add()
+
     box.add(c2_box)
     box.add(c1_box)
+    box.add(m_box)
+    box.add(mc_box)
     box.add(button)
 
+
     #this where the styling happens, it looks similar to CSS
+    #box styling(?)
     box.style.update(direction=COLUMN, padding_top=10)
     c2_box.style.update(direction=ROW, padding=5)
     c1_box.style.update(direction=ROW, padding=5)
+    m_box.style.update(direction=ROW, padding=5)
+    mc_box.style.update(direction=ROW, padding=5)
 
+    #input styling
     c1_input.style.update(flex=1)
     c2_input.style.update(flex=1, padding_left=160)
+    m_input.style.update()
+    mc_input.style.update()
+
+    #labels styling
     c1_label.style.update(width=100, padding_left=10)
     c2_label.style.update(width=100, padding_left=10)
     join_label.style.update(width=150, padding_right=10)
 
+
+    #button styling
     button.style.update(padding=15, flex=1)
 
     return box
 
+
+
+
+#def main():
+ #   return CurrencyConverter()
 
 
 #this was a mistake // this is if I was trying ot build with VOC (another transpiler)
@@ -158,13 +182,3 @@ class CurrencyConverter(toga.App):
     def say_hello(self, widget):
         print("Hello,", self.name_input.value)
 """
-
-
-#def main():
- #   return CurrencyConverter()
-
-
-
-
-
-
