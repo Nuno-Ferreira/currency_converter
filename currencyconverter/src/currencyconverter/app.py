@@ -1,7 +1,7 @@
 """
 My first application that converts any currency in seconds
 """
-from lib2to3.pytree import convert
+#from lib2to3.pytree import convert
 import toga
 from toga.style.pack import COLUMN, ROW, LEFT, RIGHT, Pack
 from currency_converter import currency_to_convert_to, currency_to_convert_from, amount_to_convert
@@ -22,11 +22,11 @@ def build(app):
     m_input = toga.TextInput()
     mc_input = toga.TextInput(readonly=True)
 
-    c1_label = toga.Label('GBP', style=Pack(text_align=LEFT))
-    c2_label = toga.Label('EUR', style=Pack(text_align=LEFT))
-    join_label = toga.Label('converts to', style=Pack(text_align=RIGHT))
-    m_label = toga.Label('amount to convert', style=Pack(text_align=RIGHT))
-    mc_label = toga.Label('converted amount:', style=Pack(text_align=RIGHT))
+    c1_label = toga.Label('Currency to convert from', style=Pack(text_align=LEFT))
+    c2_label = toga.Label('Currency to convert to', style=Pack(text_align=LEFT))
+    join_label = toga.Label('Converts to', style=Pack(text_align=RIGHT))
+    m_label = toga.Label('Amount to convert', style=Pack(text_align=RIGHT))
+    mc_label = toga.Label('Converted amount:', style=Pack(text_align=RIGHT))
 
 
     def convert(widget): #make this connnect to the currencyconverter script
