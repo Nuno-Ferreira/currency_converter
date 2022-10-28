@@ -4,7 +4,7 @@ My first application that converts any currency in seconds
 #from lib2to3.pytree import convert
 import toga
 from toga.style.pack import COLUMN, ROW, LEFT, RIGHT, Pack
-from currency_converter import currency_to_convert_to, currency_to_convert_from, amount_to_convert
+import currency_converter
 
 
 #lets start again but with toga
@@ -30,9 +30,9 @@ def build(app):
 
 
     def convert(widget): #make this connnect to the currencyconverter script
-        c1_input.value = currency_to_convert_from
-        c2_input.value = currency_to_convert_to
-        m_input.value = amount_to_convert
+        c1_input.value = currency_converter.currency_to_convert_from
+        c2_input.value = currency_converter.currency_to_convert_to
+        m_input.value = currency_converter.amount_to_convert
         if c1_input.value == int():
             return #maybe add a pop up error message saying it cant take any integers values
 
