@@ -87,6 +87,10 @@ def build(app):
     return box
 
 
+def main():
+   return toga.App('Currency converter', 'something', startup=build)
+
+
 #some instructions/clarifications on the styling
 """"
 This example shows off some more features of Toga’s Pack style engine. In this example app, we’ve set up an outer box that stacks vertically; inside that box, 
@@ -98,10 +102,6 @@ the TextInput widgets will be stretched to fit the available horizontal space. T
 will be aligned vertically and horizontally.
 
 """
-
-
-#def main():
- #   return CurrencyConverter()
 
 
 
