@@ -6,10 +6,12 @@ headers= {
 }
 
 #code-----------------------------------------------------
+
+currency_to_convert_to = str(input('Which currency would you like to convert to?:')) #might need to change this to 0 since I will be assign it another value in the app program
+currency_to_convert_from = str(input('Which currency would you like to convert from?:'))
+amount_to_convert = int(input('How much would you like to convert?:'))
+
 def main():
-  currency_to_convert_to = str(input('Which currency would you like to convert to?:')) #might need to change this to 0 since I will be assign it another value in the app program
-  currency_to_convert_from = str(input('Which currency would you like to convert from?:'))
-  amount_to_convert = int(input('How much would you like to convert?:'))
 
   url = 'https://api.apilayer.com/exchangerates_data/convert?to=' + str(currency_to_convert_to) + '&from=' + str(currency_to_convert_from) + '&amount=' + str(amount_to_convert)
 
