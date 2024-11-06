@@ -1,15 +1,19 @@
+import os
 import requests
+from dotenv import load_dotenv
+
+# Load the environment variables
+load_dotenv()
+api_key = os.getenv("API_KEY")
 
 payload = {}
-headers= {
-  "apikey": "BpvfOLSPhMzoOTHaB8kx075dBhrXsMjr"
-}
+headers= {"apikey": api_key}
 
 #code-----------------------------------------------------
 
-currency_to_convert_to = str(input('Which currency would you like to convert to?:')) #might need to change this to 0 since I will be assign it another value in the app program
-currency_to_convert_from = str(input('Which currency would you like to convert from?:'))
-amount_to_convert = int(input('How much would you like to convert?:'))
+currency_to_convert_to = str(input('Which currency would you like to convert to? ')) #might need to change this to 0 since I will be assign it another value in the app program
+currency_to_convert_from = str(input('Which currency would you like to convert from? '))
+amount_to_convert = int(input('How much would you like to convert? '))
 
 def main():
 
